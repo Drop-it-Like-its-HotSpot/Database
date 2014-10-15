@@ -1,0 +1,24 @@
+-- Table: "Messages"
+
+-- DROP TABLE "Messages";
+
+CREATE TABLE "Messages"
+(
+  m_id integer NOT NULL,
+  "Room_id" integer,
+  "User_id" integer,
+  "TimeStamp" timestamp without time zone,
+  "Message" character(160),
+  CONSTRAINT pk_m_id PRIMARY KEY (m_id),
+  CONSTRAINT "FK_Room_id" FOREIGN KEY ("Room_id")
+      REFERENCES "Chat_Room" (chat_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT "FK_User_id" FOREIGN KEY ("User_id")
+      REFERENCES "Users" ("User_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE "Messages"
+  OWNER TO gators;
