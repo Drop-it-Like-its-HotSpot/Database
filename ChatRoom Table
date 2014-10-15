@@ -1,0 +1,19 @@
+-- Table: "Chat_Room"
+
+-- DROP TABLE "Chat_Room";
+
+CREATE TABLE "Chat_Room"
+(
+  chat_id integer NOT NULL,
+  "Room_Admin" integer,
+  "Longitude" double precision,
+  "Latitude" double precision,
+  "Chat_title" character(40),
+  "Chat_Dscrpn" character(160),
+  CONSTRAINT pk_chat_id PRIMARY KEY (chat_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE "Chat_Room"
+  OWNER TO gators;
