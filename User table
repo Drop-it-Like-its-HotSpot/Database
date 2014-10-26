@@ -1,6 +1,10 @@
-CREATE TABLE "Users"
+-- Table: users
+
+-- DROP TABLE users;
+
+CREATE TABLE users
 (
-  "User_id" integer NOT NULL,
+  "User_id" serial NOT NULL,
   "Email_id" character(80),
   "Latitude" double precision,
   "Longitude" double precision,
@@ -11,7 +15,8 @@ CREATE TABLE "Users"
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE "Users"
+ALTER TABLE users
   OWNER TO gators;
+
 
 

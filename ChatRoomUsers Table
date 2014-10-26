@@ -1,20 +1,20 @@
--- Table: "Chat_Room_Users"
+-- Table: chat_room_users
 
--- DROP TABLE "Chat_Room_Users";
+-- DROP TABLE chat_room_users;
 
-CREATE TABLE "Chat_Room_Users"
+CREATE TABLE chat_room_users
 (
   "Room_id" integer,
   "User_id" integer,
   CONSTRAINT "FK_Room_id" FOREIGN KEY ("Room_id")
-      REFERENCES "Chat_Room" (chat_id) MATCH SIMPLE
+      REFERENCES chat_room (chat_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT "FK_User_id" FOREIGN KEY ("User_id")
-      REFERENCES "Users" ("User_id") MATCH SIMPLE
+      REFERENCES users ("User_id") MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE "Chat_Room_Users"
+ALTER TABLE chat_room_users
   OWNER TO gators;
