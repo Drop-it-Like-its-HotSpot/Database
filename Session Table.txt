@@ -1,0 +1,18 @@
+-- Table: session
+
+-- DROP TABLE session;
+
+CREATE TABLE session
+(
+  "User_id" integer,
+  "timestamp" timestamp without time zone,
+  session_id character(80),
+  CONSTRAINT "FK_User_id" FOREIGN KEY ("User_id")
+      REFERENCES users ("User_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE session
+  OWNER TO gators;
