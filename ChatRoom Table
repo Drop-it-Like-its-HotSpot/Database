@@ -8,8 +8,8 @@ CREATE TABLE chat_room
   "Room_Admin" integer,
   "Longitude" double precision,
   "Latitude" double precision,
-  "Chat_title" character(40),
-  "Chat_Dscrpn" character(160),
+  "Chat_title" character varying(40),
+  "Chat_Dscrpn" character varying(160),
   CONSTRAINT pk_chat_id PRIMARY KEY (chat_id)
 )
 WITH (
