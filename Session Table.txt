@@ -9,7 +9,7 @@ CREATE TABLE session
   session_id uuid,
   CONSTRAINT "FK_User_id" FOREIGN KEY ("User_id")
       REFERENCES users ("User_id") MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION
+      ON UPDATE CASCADE ON DELETE CASCADE
 )
 WITH (
   OIDS=FALSE
